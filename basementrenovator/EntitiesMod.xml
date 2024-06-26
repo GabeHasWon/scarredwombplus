@@ -1,0 +1,13 @@
+<data>
+    <!-- Enemies -->
+	
+	<tab Name="ScarredWomb+"/>
+
+  <group Name="ScarredWomb+">
+    <entity Image="ScarredWomb+/ScarredBaby.png" ID="612" Variant="81" Name="Scarred Baby" BaseHP="18"/>
+    <entity Image="ScarredWomb+/Cyst.png" ID="612" Variant="82" Name="Cyst" BaseHP="20"/>
+    <entity Image="ScarredWomb+/Parabrute.png" ID="612" Variant="83" Name="Parabrute" BaseHP="34"/>
+    <entity Image="ScarredWomb+/Pustule.png" ID="612" Variant="84" Name="Pustule" BaseHP="12"/>
+    <entity Image="ScarredWomb+/Pusy.png" ID="612" Variant="85" Name="Pusy" BaseHP="26"/>
+  </group>
+</data>

@@ -94,19 +94,18 @@ function WOMBPLUS:ScarredBabyUpdate(entity) --Scarred Baby AI function
 end
 end
 
-local CystSpeed = 8
+local CystSpeed = 7
 
 do
 local hasSetSpeed = false
-local rIdle = math.random(3)
+
 function WOMBPLUS:CystUpdate(entity)
 	local data = entity:GetData()
 	if data.State == nil then data.State = 0 end
-	if data.StateFrame == nil then data.StateFrame = 0 end
 	if data.HasSpeed == nil then data.HasSpeed = false end
-	local target = entity:GetPlayerTarget()
+	if data.IdleAnim == nil then data.IdleAnim = math.floor(math.random(3)+0.5) end
 
-	data.StateFrame = data.StateFrame + 1
+	local target = entity:GetPlayerTarget()
 
 	if data.State == 0 then
 		local rand = math.random(4)
@@ -115,17 +114,15 @@ function WOMBPLUS:CystUpdate(entity)
 		elseif rand == 3 then entity.Velocity = Vector(CystSpeed, -CystSpeed)
 		elseif rand == 4 then entity.Velocity = Vector(CystSpeed, CystSpeed) end
 		data.State = 1
-		data.StateFrame = 0
-		entity:GetSprite():Play("Idle_" .. tostring(rIdle), true)
+		entity:GetSprite():Play("Idle_" .. tostring(data.IdleAnim), true)
 
 	elseif data.State == 1 then
 		entity.Velocity = entity.Velocity:Normalized():Resized(CystSpeed):Rotated(math.random(-1, 1) * 3)
 
-		if entity:GetSprite():IsFinished("Idle_" .. tostring(rIdle)) then
+		if entity:GetSprite():IsFinished("Idle_" .. tostring(data.IdleAnim)) then
 			data.State = 1
-			data.StateFrame = 0
-			rIdle = math.random(3)
-			entity:GetSprite():Play("Idle_" .. tostring(rIdle), true)
+			data.IdleAnim = math.floor(math.random(3)+0.5)
+			entity:GetSprite():Play("Idle_" .. tostring(data.IdleAnim), true)
 		end
 
 		if entity.Velocity.X <= entity.Velocity:Normalized().X and entity.Velocity.Y <= entity.Velocity:Normalized().Y and not data.HasSpeed then
@@ -362,6 +359,7 @@ function WOMBPLUS:PusyUpdate(entity)
 		if sprite:IsFinished("Focus") then
 			data.State = 1
 			data.StateFrame = 0
+			data.StateCount = math.random(-3, 0)
 			sprite:Play("Idle", true)
 		end
 
@@ -414,8 +412,8 @@ WOMBPLUS:AddCallback(ModCallbacks.MC_POST_NPC_DEATH, WOMBPLUS.NPCDeath)
 function WOMBPLUS:CheckVariantForAI(entity)
 	if entity.Variant == variant.CYST then
 		WOMBPLUS:CystUpdate(entity)
-	--elseif entity.Variant == variant.SCARRED_BABY then
-		--WOMBPLUS:ScarredBabyUpdate(entity)
+	elseif entity.Variant == variant.SCARRED_BABY then
+		WOMBPLUS:ScarredBabyUpdate(entity)
 	elseif entity.Variant == variant.PARABRUTE then
 		WOMBPLUS:ParabruteUpdate(entity)
 	elseif entity.Variant == variant.PUSTULE then
@@ -423,10 +421,6 @@ function WOMBPLUS:CheckVariantForAI(entity)
 	elseif entity.Variant == variant.PUSY then
 		WOMBPLUS:PusyUpdate(entity)
 	end
-end
-
-function HandleError(err)
-   print("ERROR:", err)
 end
 
 --ENEMY UPDATES
