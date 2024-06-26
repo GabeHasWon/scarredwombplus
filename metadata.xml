@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <name>Scarred Womb +</name>
+    <directory>scarredwomb+</directory>
+    <id>2200168555</id>
+    <description>Adds [3] new enemies to the Scarred Womb, along with various rooms for them to occupy.
+
+This has been cleaned up quickly; I started this several years ago and abandoned it until recently. I'll likely be updating some animations and sprites, along with adding more rooms and possibly enemies as well.
+
+ Please report bugs to me. Enjoy!</description>
+    <version>1.2</version>
+    <visibility>Public</visibility>
+    <tag id="Lua"/>
+    <tag id="Rooms"/>
+    <tag id="Enemies"/>
+    <tag id="Tweaks"/>
+    <tag id="Graphics"/>
+</metadata>
