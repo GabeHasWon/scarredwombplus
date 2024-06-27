@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-    <name>scarredwomb+</name>
-    <directory>scarredwomb+</directory>
-    <id>3275931046</id>
-    <description>Adds [5] new enemies to the Scarred Womb, along with over 120 rooms for them to occupy.
+    <name>scarredwombplus</name>
+    <directory>scarredwombplus</directory>
+    <id>3276206755</id>
+    <description>
+      Adds [5] new enemies to the Scarred Womb, along with over 120 rooms for them to occupy.
 
-The enemies are as follows:
-Scarred Baby, a Baby variant that shoots explosive, lobbing tears
-Parabrute, a beefy Parabite that loves creep
-Cyst, an annoying red lump that goes everywhere and explodes when killed
-Pusy, a little idiot baby that summons Pustules to annoy you
-Pustules, they explode into a shower of tears when you get close
+      The enemies are as follows:
+      Scarred Baby, a Baby variant that shoots explosive, lobbing tears
+      Parabrute, a beefy Parabite that loves creep
+      Cyst, an annoying red lump that goes everywhere and explodes when killed
+      Pusy, a little idiot baby that summons Pustules to annoy you
+      Pustules, they explode into a shower of tears when you get close
 
- Please report bugs to me. Enjoy!</description>
-    <version>1.0</version>
+      Please report bugs to me. Enjoy!
+    </description>
+    <version>1.1</version>
     <visibility>Public</visibility>
-    <tag id="Lua"/>
-    <tag id="Rooms"/>
-    <tag id="Enemies"/>
-    <tag id="Hazards"/>
 </metadata>
