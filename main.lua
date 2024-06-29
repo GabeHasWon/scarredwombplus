@@ -209,7 +209,7 @@ function WOMBPLUS:ParabruteUpdate(entity)
 		if entity:GetSprite():IsEventTriggered("Action") then
 			local targetPosition = Isaac.GetFreeNearPosition(Isaac.GetRandomPosition(), 10)
 
-			while entity.Position:Distance(targetPosition) < 120 do
+			while entity.Position:Distance(targetPosition) < 160 do
 				targetPosition = Isaac.GetFreeNearPosition(Isaac.GetRandomPosition(), 10)
 			end
 			
@@ -343,9 +343,9 @@ function WOMBPLUS:PusyUpdate(entity)
 			focusing = false
 		end
 
-		if focusing and data.StateFrame % 15 == 0 then
+		if focusing and data.StateFrame % 40 == 0 then
 			local pos = target.Position + Vector(math.random(-4, 4), math.random(-4, 4))
-			pos = Isaac.GetFreeNearPosition(startPos, 30)
+			-- pos = Isaac:GetFreeNearPosition(startPos, 30)
 			local pustule = Isaac.Spawn(EntityType.COMMON, variant.PUSTULE, 0, pos, Vector.Zero, entity) -- Spawn pustule near player
 
 			pustule:GetData().waitTime = 5
