@@ -1,0 +1,5 @@
+- Added Overboil enemy
+- Added devolution data for all enemies (except Pustule, which is the lowest form of life)
+- Updated collission mass for Cyst and Scarred Baby
+- Updated Bestiary animations for all enemies (looking to add in the icons soon!)
+- Added 20 more rooms

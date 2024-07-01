@@ -9,5 +9,6 @@
     <entity Image="ScarredWomb+/Parabrute.png" ID="612" Variant="83" Name="Parabrute" BaseHP="34"/>
     <entity Image="ScarredWomb+/Pustule.png" ID="612" Variant="84" Name="Pustule" BaseHP="12"/>
     <entity Image="ScarredWomb+/Pusy.png" ID="612" Variant="85" Name="Pusy" BaseHP="26"/>
+    <entity Image="ScarredWomb+/Overboil.png" ID="612" Variant="86" Name="Overboil" BaseHP="50"/>
   </group>
 </data>

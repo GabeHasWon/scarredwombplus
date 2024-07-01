@@ -1,33 +1,43 @@
-<entities anm2root="gfx/monsters/" version="1">
+<entities anm2root="gfx/monsters/" deathanm2="gfx/portraits.anm2" version="5">
 
   <!-- Scarred Baby -->
-  <entity id="612" variant="81" anm2path="scarredbaby.anm2" reroll="true" name="Scarred Baby" baseHP="18" stageHP="2" boss="0" champion="1" collisionDamage="1" 
-          collisionMass="100" collisionRadius="12" friction="1" numGridCollisionPoints="12" shadowSize="14" portrait="85" beastiary="true" bestiaryTransform="0,0,1" 
-          bestiaryAnim="Idle" gridCollision="walls">
+  <entity id="612" variant="81" anm2path="scarredbaby.anm2" reroll="true" name="Scarred Baby" baseHP="18" stageHP="2" boss="0" champion="1" collisionDamage="1" collisionMass="5" collisionRadius="12" friction="1" numGridCollisionPoints="12" shadowSize="14" portrait="0" gridCollision="walls">
     <gibs amount="6" blood="1" bone="0" eye="0" gut="0" large="0" rock="0" />
+    <devolve id ="38.0.0" weight="1" />
+    <bestiary anim="Idle" transform="0,0,1"/>
   </entity>
 
   <!-- Cyst -->
-  <entity id="612" variant="82" anm2path="cyst.anm2" reroll="true" name="Cyst" baseHP="14" stageHP="2" boss="0" champion="1" collisionDamage="1" collisionMass="100" 
-          collisionRadius="12" friction="1" numGridCollisionPoints="12" shadowSize="24" portrait="85" beastiary="true" bestiaryTransform="0,0,1" bestiaryAnim="Idle" gridCollision="walls">
+  <entity id="612" variant="82" anm2path="cyst.anm2" reroll="true" name="Cyst" baseHP="14" stageHP="2" boss="0" champion="1" collisionDamage="1" collisionMass="10" collisionRadius="12" friction="1" numGridCollisionPoints="12" shadowSize="24" portrait="4" gridCollision="walls">
     <gibs amount="10" blood="1" bone="0" eye="0" gut="0" large="0" rock="0" />
+    <devolve id ="25.1.0" weight="1" />
+    <bestiary anim="Idle_1" transform="0,0,1"/>
   </entity>
 
   <!-- Parabrute -->
-  <entity id="612" variant="83" anm2path="parabrute.anm2" reroll="true" name="Parabrute" baseHP="28" stageHP="2" boss="0" champion="1" collisionDamage="1" collisionMass="100" 
-          collisionRadius="14" friction="1" numGridCollisionPoints="12" shadowSize="0" portrait="85" beastiary="true" bestiaryTransform="0,0,1" bestiaryAnim="Idle">
+  <entity id="612" variant="83" anm2path="parabrute.anm2" reroll="true" name="Parabrute" baseHP="28" stageHP="2" boss="0" champion="1" collisionDamage="1" collisionMass="100" collisionRadius="14" friction="1" numGridCollisionPoints="12" shadowSize="0" portrait="3">
     <gibs amount="7" blood="2" bone="0" eye="0" gut="0" large="0" rock="0" />
+    <devolve id ="58.1.0" weight="1" />
+    <bestiary anim="Idle" transform="0,0,1"/>
   </entity>
 
   <!-- Pustule -->
-  <entity id="612" variant="84" anm2path="pustule.anm2" reroll="true" name="Pustule" baseHP="12" stageHP="0" boss="0" champion="1" collisionDamage="0" collisionMass="100"
-        collisionRadius="11" friction="0" numGridCollisionPoints="12" shadowSize="0" portrait="85" beastiary="true" bestiaryTransform="0,0,1" bestiaryAnim="Idle">
+  <entity id="612" variant="84" anm2path="pustule.anm2" reroll="true" name="Pustule" baseHP="12" stageHP="0" boss="0" champion="1" collisionDamage="0" collisionMass="100" collisionRadius="11" friction="0" numGridCollisionPoints="12" shadowSize="0" portrait="5">
     <gibs amount="7" blood="2" bone="0" eye="0" gut="0" large="0" rock="0" />
+    <bestiary anim="Idle" transform="0,0,1"/>
   </entity>
 
   <!-- Pusy -->
-  <entity id="612" variant="85" anm2path="pusy.anm2" reroll="true" name="Pusy" baseHP="26" stageHP="0" boss="0" champion="1" collisionDamage="1" collisionMass="100"
-        collisionRadius="11" friction="0" numGridCollisionPoints="12" shadowSize="0" portrait="85" beastiary="true" bestiaryTransform="0,0,1" bestiaryAnim="Idle">
+  <entity id="612" variant="85" anm2path="pusy.anm2" reroll="true" name="Pusy" baseHP="24" stageHP="0" boss="0" champion="1" collisionDamage="1" collisionMass="100" collisionRadius="11" friction="0" numGridCollisionPoints="12" shadowSize="0" portrait="1">
     <gibs amount="7" blood="2" bone="0" eye="0" gut="0" large="0" rock="0" />
+    <devolve id ="612.84.0" weight="1" />
+    <bestiary anim="Idle" transform="0,0,1"/>
+  </entity>
+
+  <!-- Overboil -->
+  <entity id="612" variant="86" anm2path="overboil.anm2" reroll="true" name="Overboil" baseHP="50" stageHP="0" boss="0" champion="1" collisionDamage="1" collisionMass="100" collisionRadius="12" friction="0" numGridCollisionPoints="12" shadowSize="20" portrait="2">
+    <gibs amount="16" blood="10" bone="0" eye="0" gut="4" large="0" rock="0" />
+    <devolve id ="30.0.0" weight="1" />
+    <bestiary anim="Hori_0" transform="0,0,1"/>
   </entity>
 </entities>
