@@ -3,7 +3,7 @@
     <name>scarredwombplus</name>
     <directory>scarredwombplus</directory>
     <id>3276206755</id>
-    <description>Adds [6] new enemies to the Scarred Womb, along with 220 new rooms for them to occupy.
+    <description>Adds [6] new enemies to the Scarred Womb, along with 390 new rooms for them to occupy.
 
 The enemies are as follows:
 Scarred Baby, a Baby variant that shoots explosive, lobbing tears
@@ -12,9 +12,10 @@ Cyst, an annoying red lump that goes everywhere and explodes when killed
 Pus-y, a little idiot baby that summons Pustules to annoy you
 Pustules, they explode into a shower of tears when you get close
 Overboiled, massive, scarred boils which shoot a line of tears repeatedly
+Seespot, a grid entity that, after being steppped on, will boil over with blood
 
 Please report bugs to me. Enjoy!</description>
-    <version>1.4</version>
+    <version>1.9</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
     <tag id="Rooms"/>
