@@ -3,14 +3,6 @@ local stages = 0
 local nextStage = 8
 local toPos = Vector(0, 0)
 
-function WOMBPLUS:ParabruteInit(entity)
-	if entity.Variant == variant.PARABRUTE then
-		entity:AddEntityFlags(EntityFlag.FLAG_NO_KNOCKBACK | EntityFlag.FLAG_NO_PHYSICS_KNOCKBACK)
-	end
-end
-
-WOMBPLUS:AddCallback(ModCallbacks.MC_POST_NPC_INIT, WOMBPLUS.ParabruteInit, EntityType.PARABRUTE)
-
 function WOMBPLUS:ParabruteUpdate(entity)
 	local data = entity:GetData()
 	if data.State == nil then data.State = 0 end
@@ -30,14 +22,15 @@ function WOMBPLUS:ParabruteUpdate(entity)
 	elseif data.State == 1 then
 
 		if entity:CollidesWithGrid() or data.GridCountdown > 0 then
-			entity.Pathfinder:FindGridPath(target.Position, 1, 1, false)
+			entity.Pathfinder:FindGridPath(target.Position, 0.6, 1, false)
+
 			if data.GridCountdown <= 0 then
 				data.GridCountdown = 30
 			else
 				data.GridCountdown = data.GridCountdown - 1
 			end
 		else
-			entity.Velocity = (target.Position - entity.Position):Normalized():Resized(4.5)
+			entity.Velocity = (target.Position - entity.Position):Normalized():Resized(4)
 		end
 
 		if (math.random(3) == 2) then

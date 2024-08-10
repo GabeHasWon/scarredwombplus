@@ -8,6 +8,7 @@
     <entity Image="ScarredWomb+/Pustule.png" ID="612" Variant="84" Name="Pustule" BaseHP="12"/>
     <entity Image="ScarredWomb+/Pusy.png" ID="612" Variant="85" Name="Pusy" BaseHP="26"/>
     <entity Image="ScarredWomb+/Overboil.png" ID="612" Variant="86" Name="Overboil" BaseHP="50"/>
+    <entity Image="ScarredWomb+/Clotworm.png" ID="612" Variant="88" Name="Clotworm" BaseHP="25"/>
     <!-- Grid -->
     <entity ID="612" Image="ScarredWomb+/Seespot.png" Name="Seespot" Subtype="0" Variant="87" NoBlockDoors="1" />
   </group>

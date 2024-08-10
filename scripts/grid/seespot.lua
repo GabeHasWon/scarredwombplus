@@ -1,12 +1,3 @@
-WOMBPLUS.Grid = { }
-WOMBPLUS.Grid.SeespotGrid = StageAPI.CustomGrid("Seespot", {
-    BaseType = GridEntityType.GRID_PIT,
-    NoOverrideGridSprite = true,
-    SpawnerEntity = { Type = 612, Variant = 87 },
-    Anm2 = "gfx/grid/seespot.anm2",
-    Animation = "Idle"
-})
-
 local function CheckSeespotSteppedOn(pos, index, doExtraChecks)
     local steppedOn = false
     local players = Isaac.FindByType(EntityType.ENTITY_PLAYER, -1, -1, false, false)
@@ -37,12 +28,12 @@ function WOMBPLUS.SeespotAI(customGrid)
     local index = customGrid.GridIndex
     local room = Game():GetRoom()
 
-    if not persistentData.Timer then 
-        persistentData.Timer = 0
+    if not data.Timer then 
+        data.Timer = 0
         data.SteppedOn = false
     end
 
-    persistentData.Timer = persistentData.Timer - 1
+    data.Timer = data.Timer - 1
 
     if room:GetGridPath(index) == 3000 then
         room:SetGridPath(index, 0)
@@ -50,11 +41,11 @@ function WOMBPLUS.SeespotAI(customGrid)
 
     grid.CollisionClass = GridCollisionClass.COLLISION_NONE
 
-    if CheckSeespotSteppedOn(grid.Position, index, persistentData.Timer <= 0) then 
-        persistentData.Timer = 20
+    if CheckSeespotSteppedOn(grid.Position, index, data.Timer <= 0) then 
+        data.Timer = 20
     end
 
-    if persistentData.Timer > 5 and persistentData.Timer < 15 then
+    if data.Timer > 5 and data.Timer < 15 then
         local offset = Vector(math.random(-16, 16), math.random(-16, 16))
         local velocity = Vector(math.random(-1600, 1600), math.random(-1600, 1600))
 		local p = Isaac.Spawn(EntityType.ENTITY_PROJECTILE, 0, 0, customGrid.Position + offset, Vector(0, 0) + offset * 0.004, nil):ToProjectile()

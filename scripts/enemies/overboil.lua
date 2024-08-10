@@ -73,3 +73,14 @@ function WOMBPLUS:OverboilUpdate(entity)
 	end
 
 end
+
+function WOMBPLUS:OverboilHurt(entity, damage, flag, source)
+	if entity.Variant == variant.OVERBOIL then
+		local data = entity:GetData()
+		return not data.shooting
+	end
+
+	return nil
+end
+
+WOMBPLUS:AddCallback(ModCallbacks.MC_ENTITY_TAKE_DMG, WOMBPLUS.OverboilHurt, EntityType.COMMON)

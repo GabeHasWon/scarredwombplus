@@ -35,9 +35,10 @@ function WOMBPLUS:ScarredBabyUpdate(entity) --Scarred Baby AI function
 		if entity:GetSprite():IsEventTriggered("Spit") then
 			local vel = (target.Position - entity.Position):Normalized()
 			local par = ProjectileParams()
-			par.VelocityMulti = 4
+			par.VelocityMulti = 8
 			par.Scale = 2
-			par.FallingSpeedModifier = -1
+			par.FallingSpeedModifier = 0.5
+			par.FallingAccelModifier = 0.2
 			par.HeightModifier = -10
 			entity:FireProjectiles(entity.Position, vel, 0, par)
 		elseif entity:GetSprite():IsFinished("Spit") then

@@ -42,6 +42,13 @@
     <bestiary anim="Hori_0" transform="0,0,1"/>
   </entity>
 
+  <!-- Clot Worm -->
+  <entity id="612" variant="88" anm2path="monsters/clotworm.anm2" reroll="true" name="Clot Worm" baseHP="25" stageHP="0" boss="0" champion="1" collisionDamage="1" collisionMass="100" collisionRadius="12" friction="0" numGridCollisionPoints="12" shadowSize="0" portrait="2">
+    <gibs amount="16" blood="6" bone="0" eye="0" gut="4" large="4" rock="0" />
+    <devolve id ="221.0.0" weight="1" />
+    <bestiary anim="Idle" transform="0,0,1"/>
+  </entity>
+
   <!-- GRID -->
   <!-- Seespot -->
   <entity id="612" variant="87" anm2path="grid/seespot.anm2" name="Seespot" baseHP="20" boss="0" champion="0" collisionDamage="0" collisionMass="100" collisionRadius="0" friction="1" numGridCollisionPoints="4" gridCollision="walls" shadowSize="0" stageHP="0" shutdoors="false" portrait="61" bestiary="false" bestiaryTransform="0,0,1" bestiaryAnim="Idle">

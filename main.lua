@@ -10,13 +10,28 @@ variant.PUSTULE = Isaac.GetEntityVariantByName("Pustule")
 variant.PUSY = Isaac.GetEntityVariantByName("Pusy")
 variant.OVERBOIL = Isaac.GetEntityVariantByName("Overboil")
 variant.SEESPOT = Isaac.GetEntityVariantByName("Seespot")
+variant.CLOTWORM = Isaac.GetEntityVariantByName("Clot Worm")
 
+WOMBPLUS.Grid = { }
+
+WOMBPLUS.Grid.SeespotGrid = StageAPI.CustomGrid("Seespot", {
+    BaseType = GridEntityType.GRID_PIT,
+    NoOverrideGridSprite = true,
+    SpawnerEntity = { Type = 612, Variant = 87 },
+    Anm2 = "gfx/grid/seespot.anm2",
+    Animation = "Idle"
+})
+
+-- Grid
 include("scripts.grid.seespot")
+
+-- Enemy
 include("scripts.enemies.pusypus")
 include("scripts.enemies.parabrute")
 include("scripts.enemies.overboil")
 include("scripts.enemies.scarredbaby")
 include("scripts.enemies.cyst")
+include("scripts.enemies.clotworm")
 
 WOMBPLUS.LoadScripts = LoadScripts
 
@@ -27,11 +42,11 @@ function WOMBPLUS:Creep(variant, subtype, pos, parent) --Simple creep spawn func
 end
 
 function WOMBPLUS:ProjectileUpdate(pro)
-	if pro.SpawnerType == EntityType.SCARRED_BABY and pro.SpawnerVariant == variant.SCARRED_BABY then
+	if pro.SpawnerType == EntityType.COMMON and pro.SpawnerVariant == variant.SCARRED_BABY then
 		if pro:IsDead() then
 			for i = -4, 4 do
 				local proj = Isaac.Spawn(EntityType.ENTITY_PROJECTILE, 0, 0, pro.Position, RandomVector() * math.random(6), pro):ToProjectile()
-				proj.FallingSpeed = -10
+				proj.FallingSpeed = -6
 				proj.FallingAccel = 0.5
 			end
 		end
@@ -81,17 +96,6 @@ function WOMBPLUS:NPCDeath(entity)
 	end
 end
 
-function WOMBPLUS:CheckVariantForHurt(entity, damage, flag, source)
-	if entity.Variant == variant.OVERBOIL then
-		local data = entity:GetData()
-		return not data.shooting
-	end
-
-	return nil
-end
-
-WOMBPLUS:AddCallback(ModCallbacks.MC_ENTITY_TAKE_DMG, WOMBPLUS.CheckVariantForHurt, EntityType.COMMON)
-
 --RANDOM HOOKS
 WOMBPLUS:AddCallback(ModCallbacks.MC_POST_PROJECTILE_UPDATE, WOMBPLUS.ProjectileUpdate)
 WOMBPLUS:AddCallback(ModCallbacks.MC_POST_NPC_DEATH, WOMBPLUS.NPCDeath)
@@ -109,8 +113,19 @@ function WOMBPLUS:CheckVariantForAI(entity)
 		WOMBPLUS:PusyUpdate(entity)
 	elseif entity.Variant == variant.OVERBOIL then
 		WOMBPLUS:OverboilUpdate(entity)
+	elseif entity.Variant == variant.CLOTWORM then
+		WOMBPLUS:ClotwormUpdate(entity)
 	end
 end
 
 --ENEMY UPDATES
 WOMBPLUS:AddCallback(ModCallbacks.MC_NPC_UPDATE, WOMBPLUS.CheckVariantForAI, EntityType.COMMON)
+
+function WOMBPLUS:EntityInit(entity)
+	if entity.Variant == variant.PARABRUTE or entity.Variant == variant.OVERBOIL or entity.Variant == variant.CLOTWORM or entity.Variant == variant.PUSY then
+		entity:AddEntityFlags(EntityFlag.FLAG_NO_KNOCKBACK | EntityFlag.FLAG_NO_PHYSICS_KNOCKBACK)
+	end
+end
+
+-- SPAWN FLAGS
+WOMBPLUS:AddCallback(ModCallbacks.MC_POST_NPC_INIT, WOMBPLUS.EntityInit, EntityType.COMMON)
