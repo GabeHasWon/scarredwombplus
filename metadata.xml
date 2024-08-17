@@ -3,7 +3,7 @@
     <name>scarredwombplus</name>
     <directory>scarredwombplus</directory>
     <id>3276206755</id>
-    <description>Adds [8] new enemies to the Scarred Womb, along with 440 new rooms for them to occupy.
+    <description>Adds [8] new enemies to the Scarred Womb, along with 460 new rooms for them to occupy.
 
 The enemies are as follows:
 Scarred Baby, a Baby variant that shoots explosive, lobbing tears
@@ -16,7 +16,7 @@ Seespot, a grid entity that, after being steppped on, will boil over with blood
 Clot Worm, a stationary enemy that rapidly fires projectiles, and when killed, throws bursts of blood around until everything else is dead
 
 Please report bugs to me. Enjoy!</description>
-    <version>1.10</version>
+    <version>1.12</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
     <tag id="Rooms"/>
