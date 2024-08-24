@@ -33,6 +33,9 @@ include("scripts.enemies.scarredbaby")
 include("scripts.enemies.cyst")
 include("scripts.enemies.clotworm")
 
+-- Misc
+include("scripts.misc.roomname")
+
 WOMBPLUS.LoadScripts = LoadScripts
 
 function WOMBPLUS:Creep(variant, subtype, pos, parent) --Simple creep spawn function, much easier to use
@@ -129,3 +132,7 @@ end
 
 -- SPAWN FLAGS
 WOMBPLUS:AddCallback(ModCallbacks.MC_POST_NPC_INIT, WOMBPLUS.EntityInit, EntityType.COMMON)
+
+function string.starts(str, start)
+   return string.sub(str, 1, string.len(start)) == start
+end

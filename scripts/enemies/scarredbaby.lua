@@ -33,14 +33,22 @@ function WOMBPLUS:ScarredBabyUpdate(entity) --Scarred Baby AI function
 		entity.Velocity = entity.Velocity * 0.80
 		
 		if entity:GetSprite():IsEventTriggered("Spit") then
-			local vel = (target.Position - entity.Position):Normalized()
-			local par = ProjectileParams()
-			par.VelocityMulti = 8
-			par.Scale = 2
-			par.FallingSpeedModifier = 0.5
-			par.FallingAccelModifier = 0.2
-			par.HeightModifier = -10
-			entity:FireProjectiles(entity.Position, vel, 0, par)
+			if not entity:HasEntityFlags(EntityFlag.FLAG_CONFUSION) or math.random(0, 10) > 2 then
+				local vel = (target.Position - entity.Position):Normalized()
+
+				if entity:HasEntityFlags(EntityFlag.FLAG_CONFUSION) then
+					vel = vel * math.random(60, 80) * 0.01
+					vel = vel:Rotated(math.random(-60, 60))
+				end
+
+				local par = ProjectileParams()
+				par.VelocityMulti = 8
+				par.Scale = 2
+				par.FallingSpeedModifier = 0.5
+				par.FallingAccelModifier = 0.2
+				par.HeightModifier = -10
+				entity:FireProjectiles(entity.Position, vel, 0, par)
+			end
 		elseif entity:GetSprite():IsFinished("Spit") then
 			data.State = 3
 			data.StateFrame = 0

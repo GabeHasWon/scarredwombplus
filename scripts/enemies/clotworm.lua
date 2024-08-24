@@ -27,6 +27,12 @@ function WOMBPLUS:ClotwormUpdate(entity)
 
 			if sprite:IsEventTriggered("Shoot") then
 				local vel = (target.Position - entity.Position):Normalized()
+
+				if entity:HasEntityFlags(EntityFlag.FLAG_CONFUSION) then
+					vel = vel * 0.8
+					vel = vel:Rotated(math.random(-20, 20))
+				end
+
 				local par = ProjectileParams()
 				par.VelocityMulti = 8
 				par.Scale = 1.6
@@ -63,6 +69,7 @@ function WOMBPLUS:ClotwormUpdate(entity)
 			if sprite:IsEventTriggered("Shoot") then
 				for i = 0, 8 do
 					local vel = Vector(0, math.random(50, 100) * 0.01):Normalized():Rotated(math.random(0, 360)):Resized(math.random(50, 100) * 0.01)
+
 					local par = ProjectileParams()
 					par.VelocityMulti = 8
 					par.FallingAccelModifier = 1.5
