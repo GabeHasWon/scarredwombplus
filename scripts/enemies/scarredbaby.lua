@@ -2,7 +2,7 @@ do
 local counter = 0
 local offset = 0
 
-function WOMBPLUS:ScarredBabyUpdate(entity) --Scarred Baby AI function
+function WOMBPLUS:ScarredBabyUpdate(entity)
 	local data = entity:GetData()
 	if data.State == nil then data.State = 0 end
 	if data.StateFrame == nil then data.StateFrame = 0 end
@@ -20,10 +20,10 @@ function WOMBPLUS:ScarredBabyUpdate(entity) --Scarred Baby AI function
 
 		if entity:GetSprite():IsFinished("Idle") then
 			counter = counter + 1
-			if counter > 15 + offset then
+			if counter > 20 + offset then
 				data.State = 2
 				counter = 0
-				offset = math.random(10)
+				offset = math.random(0, 10)
 				entity:GetSprite():Play("Spit", true)
 			end
 			data.StateFrame = 0
@@ -51,8 +51,19 @@ function WOMBPLUS:ScarredBabyUpdate(entity) --Scarred Baby AI function
 			end
 		elseif entity:GetSprite():IsFinished("Spit") then
 			data.State = 3
+
+			if math.random(0, 10) < 5 then
+				data.State = 1
+			end
+
 			data.StateFrame = 0
-			entity:GetSprite():Play("Teleport", true)
+			local anim = "Teleport"
+
+			if data.State == 1 then
+				anim = "Idle"
+			end
+
+			entity:GetSprite():Play(anim, true)
 		end
 
 	elseif data.State == 3 then

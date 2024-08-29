@@ -15,8 +15,10 @@ Overboiled, massive, scarred boils which shoot a line of tears repeatedly
 Seespot, a grid entity that, after being steppped on, will boil over with blood
 Clot Worm, a stationary enemy that rapidly fires projectiles, and when killed, throws bursts of blood around until everything else is dead
 
+Additionally, this mod also adds in a few resprites for vanilla enemies, and uses those in new rooms as well.
+
 Please report bugs to me. Enjoy!</description>
-    <version>1.14</version>
+    <version>1.15</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
     <tag id="Rooms"/>
