@@ -3,10 +3,10 @@
     <name>scarredwombplus</name>
     <directory>scarredwombplus</directory>
     <id>3276206755</id>
-    <description>Adds [8] new enemies to the Scarred Womb, along with 550 new rooms for them to occupy.
+    <description>Adds [8] new enemies to the Scarred Womb, along with 600 new rooms for them to occupy.
 
 The enemies are as follows:
-Scarred Baby, a Baby variant that shoots explosive, lobbing tears
+Scarred Baby, a Baby variant that spits bursting, lobbing tears
 Parabrute, a beefy Parabite that loves creep
 Cyst, an annoying red lump that goes everywhere and explodes when killed
 Pus-y, a little idiot baby that summons Pustules to annoy you
@@ -18,7 +18,7 @@ Clot Worm, a stationary enemy that rapidly fires projectiles, and when killed, t
 Additionally, this mod also adds in a few resprites for vanilla enemies, and uses those in new rooms as well.
 
 Please report bugs to me. Enjoy!</description>
-    <version>1.15</version>
+    <version>1.17</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
     <tag id="Rooms"/>
