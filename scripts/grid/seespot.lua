@@ -3,7 +3,8 @@ local function CheckSeespotSteppedOn(pos, index, doExtraChecks)
     local players = Isaac.FindByType(EntityType.ENTITY_PLAYER, -1, -1, false, false)
     local room = Game():GetRoom()
     for _, player in ipairs(players) do
-        if room:GetGridIndex(player.Position) == index or (doExtraChecks and player.Position:DistanceSquared(pos) <= (14 + player.Size) ^ 2) then
+        local canFly = player:ToPlayer().CanFly
+        if (room:GetGridIndex(player.Position) == index or (doExtraChecks and player.Position:DistanceSquared(pos) <= (14 + player.Size) ^ 2)) and not canFly then
             steppedOn = true
         end
     end
@@ -45,7 +46,7 @@ function WOMBPLUS.SeespotAI(customGrid)
         data.Timer = 20
     end
 
-    if data.Timer > 5 and data.Timer < 15 then
+    if data.Timer > 5 and data.Timer < 18 and data.Timer % 3 == 0 then
         local offset = Vector(math.random(-16, 16), math.random(-16, 16))
         local velocity = Vector(math.random(-1600, 1600), math.random(-1600, 1600))
 		local p = Isaac.Spawn(EntityType.ENTITY_PROJECTILE, 0, 0, customGrid.Position + offset, Vector(0, 0) + offset * 0.004, nil):ToProjectile()

@@ -68,15 +68,15 @@ function WOMBPLUS:ClotwormUpdate(entity)
 
 			if sprite:IsEventTriggered("Shoot") then
 				for i = 0, 8 do
-					local vel = Vector(0, math.random(50, 100) * 0.01):Normalized():Rotated(math.random(0, 360)):Resized(math.random(50, 100) * 0.01)
+					local vel = Vector(0, math.random(50, 100) * 0.01):Normalized():Rotated(math.random(0, 360)):Resized(math.random(25, 50) * 0.01)
 
 					local par = ProjectileParams()
 					par.VelocityMulti = 8
 					par.FallingAccelModifier = 1.5
 					par.CurvingStrength = 0.02
 					par.Scale = 1
-					par.FallingSpeedModifier = math.random(-20, -5) * 0.1
-					par.HeightModifier = -12
+					par.FallingSpeedModifier = math.random(1500, 3000) * -0.01
+					par.HeightModifier = 16
 					entity:FireProjectiles(entity.Position, vel, 0, par)
 				end
 			end
