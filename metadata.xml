@@ -3,7 +3,7 @@
     <name>scarredwombplus</name>
     <directory>scarredwombplus</directory>
     <id>3276206755</id>
-    <description>Adds [8] new enemies to the Scarred Womb, along with 600 new rooms for them to occupy.
+    <description>Adds [8] new enemies to the Scarred Womb, along with 660 new rooms for them to occupy.
 
 The enemies are as follows:
 Scarred Baby, a Baby variant that spits bursting, lobbing tears
@@ -18,7 +18,7 @@ Clot Worm, a stationary enemy that rapidly fires projectiles, and when killed, t
 Additionally, this mod also adds in a few resprites for vanilla enemies, and uses those in new rooms as well.
 
 Please report bugs to me. Enjoy!</description>
-    <version>1.17</version>
+    <version>1.19</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
     <tag id="Rooms"/>

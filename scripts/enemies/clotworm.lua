@@ -83,7 +83,6 @@ function WOMBPLUS:ClotwormUpdate(entity)
 
 			if not sprite:IsPlaying("Death") then
 				local count = Game():GetRoom():GetAliveEnemiesCount()
-				print(tostring(count - Isaac.CountEntities(nil, EntityType.COMMON, variant.CLOTWORM)))
 
 				if (count - Isaac.CountEntities(nil, EntityType.COMMON, variant.CLOTWORM)) <= 0 then
 					sprite:Play("Death")
