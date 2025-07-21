@@ -1,4 +1,5 @@
-- Reduced Seespot projectile spam
-- Seespots no longer activate if the player is flying
-- Improved Clotworm death throes projectile spam
-- Added 40 more rooms
+- Fixed a ton of rooms that had unnecessarily disabled or enabled but blocked doors
+- Renamed a few rooms for consistency
+- Fixed rooms that used the stone eye turret not having enemies
+- Added Seespot to a couple older rooms
+- Significantly improved difficulty consistency of all rooms
