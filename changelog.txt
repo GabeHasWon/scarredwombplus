@@ -1,5 +1,3 @@
-- Fixed a ton of rooms that had unnecessarily disabled or enabled but blocked doors
-- Renamed a few rooms for consistency
-- Fixed rooms that used the stone eye turret not having enemies
-- Added Seespot to a couple older rooms
-- Significantly improved difficulty consistency of all rooms
+- Rounded difficulty of all rooms to 1, 5, 10, 15 or 20
+- Fixed Seespots being counted as pits, instead counting as decor - fixes compat issues, weird merging
+- 

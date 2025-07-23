@@ -15,7 +15,7 @@ variant.CLOTWORM = Isaac.GetEntityVariantByName("Clot Worm")
 WOMBPLUS.Grid = { }
 
 WOMBPLUS.Grid.SeespotGrid = StageAPI.CustomGrid("Seespot", {
-    BaseType = GridEntityType.GRID_PIT,
+    BaseType = GridEntityType.GRID_DECORATION,
     NoOverrideGridSprite = true,
     SpawnerEntity = { Type = 612, Variant = 87 },
     Anm2 = "gfx/grid/seespot.anm2",

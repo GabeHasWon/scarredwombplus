@@ -18,7 +18,7 @@ Clot Worm, a stationary enemy that rapidly fires projectiles, and when killed, t
 Additionally, this mod also adds in a few resprites for vanilla enemies, and uses those in new rooms as well.
 
 Please report bugs to me. Enjoy!</description>
-    <version>1.20</version>
+    <version>1.21</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
     <tag id="Rooms"/>
