@@ -34,6 +34,10 @@ function WOMBPLUS.SeespotAI(customGrid)
         data.SteppedOn = false
     end
 
+    if not customGrid.PersistentData.Effect then
+        customGrid.PersistentData.Effect = Isaac.Spawn(EffectID, variant.SEESPOTVISUAL, 0, customGrid.Position, Vector.Zero, nil)
+    end
+
     data.Timer = data.Timer - 1
 
     if room:GetGridPath(index) == 3000 then
@@ -60,7 +64,20 @@ end
 function WOMBPLUS.SeespotSpawn(customGrid)
     local persistData = customGrid.PersistentData
     local data = customGrid.Data
+    persistData.Effect = Isaac.Spawn(EffectID, variant.SEESPOTVISUAL, 0, customGrid.Position, Vector.Zero, nil)
 end
 
 StageAPI.AddCallback("WombPlus", "POST_CUSTOM_GRID_UPDATE", 1, WOMBPLUS.SeespotAI, WOMBPLUS.Grid.SeespotGrid.Name)
 StageAPI.AddCallback("WombPlus", "POST_SPAWN_CUSTOM_GRID", 1, WOMBPLUS.SeespotSpawn, WOMBPLUS.Grid.SeespotGrid.Name)
+
+function WOMBPLUS:SeespotVisualUpdate(entity)
+    local data = entity:GetData()
+
+    if not data.Init then
+        data.Init = true
+        entity.DepthOffset = -1000
+
+        local name = "Idle" .. tostring(math.random(1, 3))
+        entity:GetSprite():Play(name, true)
+    end
+end

@@ -1,3 +1,4 @@
-- Rounded difficulty of all rooms to 1, 5, 10, 15 or 20
-- Fixed Seespots being counted as pits, instead counting as decor - fixes compat issues, weird merging
-- 
+- Made seespots have 3 additional sprite variants, more animation
+- Made Cysts death tears be more consistently on player height
+- Added 30 more rooms
+- Fixed one room having no enemies despite needing them

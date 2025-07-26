@@ -51,7 +51,8 @@
 
   <!-- GRID -->
   <!-- Seespot -->
-  <entity id="612" variant="87" anm2path="grid/seespot.anm2" name="Seespot" baseHP="20" boss="0" champion="0" collisionDamage="0" collisionMass="100" collisionRadius="0" friction="1" numGridCollisionPoints="4" gridCollision="walls" shadowSize="0" stageHP="0" shutdoors="false" portrait="61" bestiary="false" bestiaryTransform="0,0,1" bestiaryAnim="Idle">
-    <gibs amount="6" blood="0" bone="0" eye="0" gut="0" large="0" rock="1" />
-  </entity>
+  <entity id="612" variant="87" anm2path="grid/seespot.anm2" name="Seespot" baseHP="1" boss="0" champion="0" collisionDamage="0" collisionMass="100" collisionRadius="0" friction="1" numGridCollisionPoints="4" gridCollision="walls" shadowSize="0" stageHP="0" shutdoors="false" portrait="61" bestiary="false" bestiaryTransform="0,0,1" bestiaryAnim="Idle" />
+
+  <!-- Seespot visual effect -->
+  <entity id="1000" variant="1789" anm2path="grid/seespot.anm2" name="Seespot Visual" baseHP="1" boss="0" champion="0" collisionDamage="0" collisionMass="100" collisionRadius="0" friction="1" numGridCollisionPoints="0" gridCollision="walls" shadowSize="0" stageHP="0" shutdoors="false" portrait="61" bestiary="false" bestiaryTransform="0,0,1" bestiaryAnim="Idle" />
 </entities>

@@ -2,6 +2,7 @@ _G.WOMBPLUS = RegisterMod("Womb+", 1)
 
 EntityType.COMMON = 612 -- refer to entities2.xml for the constant
 
+_G.EffectID = 1000 -- Effects are all ID 1000 for some reason
 _G.variant = {}
 variant.PARABRUTE = Isaac.GetEntityVariantByName("Parabrute")
 variant.CYST = Isaac.GetEntityVariantByName("Cyst")
@@ -11,6 +12,7 @@ variant.PUSY = Isaac.GetEntityVariantByName("Pusy")
 variant.OVERBOIL = Isaac.GetEntityVariantByName("Overboil")
 variant.SEESPOT = Isaac.GetEntityVariantByName("Seespot")
 variant.CLOTWORM = Isaac.GetEntityVariantByName("Clot Worm")
+variant.SEESPOTVISUAL = Isaac.GetEntityVariantByName("Seespot Visual")
 
 WOMBPLUS.Grid = { }
 
@@ -19,7 +21,7 @@ WOMBPLUS.Grid.SeespotGrid = StageAPI.CustomGrid("Seespot", {
     NoOverrideGridSprite = true,
     SpawnerEntity = { Type = 612, Variant = 87 },
     Anm2 = "gfx/grid/seespot.anm2",
-    Animation = "Idle"
+    Animation = "Empty"
 })
 
 -- Grid
@@ -64,9 +66,9 @@ function WOMBPLUS:NPCDeath(entity)
 	if entity.Type == EntityType.COMMON and entity.Variant == variant.CYST then-- or entity.Type == EntityType.PUSTULE then
 		local par = ProjectileParams()
 		par.VelocityMulti = 1
-		par.FallingSpeedModifier = -2
+		par.FallingSpeedModifier = 0
 		par.FallingAccelModifier = 0
-		par.HeightModifier = -10
+		par.HeightModifier = 0
 
 		if entity.Type == EntityType.PUSTULE then
 			par.FallingSpeedModifier = -1
@@ -123,9 +125,10 @@ end
 
 --ENEMY UPDATES
 WOMBPLUS:AddCallback(ModCallbacks.MC_NPC_UPDATE, WOMBPLUS.CheckVariantForAI, EntityType.COMMON)
+WOMBPLUS:AddCallback(ModCallbacks.MC_POST_EFFECT_UPDATE, WOMBPLUS.SeespotVisualUpdate, variant.SEESPOTVISUAL)
 
 function WOMBPLUS:EntityInit(entity)
-	if entity.Variant == variant.PARABRUTE or entity.Variant == variant.OVERBOIL or entity.Variant == variant.CLOTWORM or entity.Variant == variant.PUSY then
+	if entity.Variant == variant.PARABRUTE or entity.Variant == variant.OVERBOIL or entity.Variant == variant.CLOTWORM or entity.Variant == variant.PUSY or entity.Variant == variant.SEESPOTVISUAL then
 		entity:AddEntityFlags(EntityFlag.FLAG_NO_KNOCKBACK | EntityFlag.FLAG_NO_PHYSICS_KNOCKBACK)
 	end
 end
