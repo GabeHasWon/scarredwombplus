@@ -1,5 +1,7 @@
 _G.WOMBPLUS = RegisterMod("Womb+", 1)
 
+StageAPI.UnregisterCallbacks("WombPlus") -- Unregister callbacks for luamod compat
+
 EntityType.COMMON = 612 -- refer to entities2.xml for the constant
 
 _G.EffectID = 1000 -- Effects are all ID 1000 for some reason
@@ -13,6 +15,8 @@ variant.OVERBOIL = Isaac.GetEntityVariantByName("Overboil")
 variant.SEESPOT = Isaac.GetEntityVariantByName("Seespot")
 variant.CLOTWORM = Isaac.GetEntityVariantByName("Clot Worm")
 variant.SEESPOTVISUAL = Isaac.GetEntityVariantByName("Seespot Visual")
+variant.NERVEENDING = Isaac.GetEntityVariantByName("Exposed Nerves")
+variant.NERVEENDINGVISUAL = Isaac.GetEntityVariantByName("Exposed Nerves Visual")
 
 WOMBPLUS.Grid = { }
 
@@ -24,8 +28,17 @@ WOMBPLUS.Grid.SeespotGrid = StageAPI.CustomGrid("Seespot", {
     Animation = "Empty"
 })
 
+WOMBPLUS.Grid.NerveEndingGrid = StageAPI.CustomGrid("ExposedNerves", {
+    BaseType = GridEntityType.GRID_DECORATION,
+    NoOverrideGridSprite = true,
+    SpawnerEntity = { Type = 612, Variant = 89 },
+    Anm2 = "gfx/grid/nerveendings.anm2",
+    Animation = "Idle"
+})
+
 -- Grid
 include("scripts.grid.seespot")
+include("scripts.grid.nerveending")
 
 -- Enemy
 include("scripts.enemies.pusypus")
@@ -63,7 +76,7 @@ function WOMBPLUS:ProjectileUpdate(pro)
 end
 
 function WOMBPLUS:NPCDeath(entity)
-	if entity.Type == EntityType.COMMON and entity.Variant == variant.CYST then-- or entity.Type == EntityType.PUSTULE then
+	if entity.Type == EntityType.COMMON and entity.Variant == variant.CYST then
 		local par = ProjectileParams()
 		par.VelocityMulti = 1
 		par.FallingSpeedModifier = 0
@@ -82,7 +95,7 @@ function WOMBPLUS:NPCDeath(entity)
 			par.Scale = 2 - (siz * 0.1)
 			entity:FireProjectiles(entity.Position, vel, 0, par) 
 		end
-	elseif entity.Type == EntityType.COMMON and entity.Variant == variant.PUSTULE then-- or entity.Type == EntityType.PUSTULE then
+	elseif entity.Type == EntityType.COMMON and entity.Variant == variant.PUSTULE then
 		for i = 0, 14 do 
 			local par = ProjectileParams()
 			par.VelocityMulti = 2
@@ -125,11 +138,14 @@ end
 
 --ENEMY UPDATES
 WOMBPLUS:AddCallback(ModCallbacks.MC_NPC_UPDATE, WOMBPLUS.CheckVariantForAI, EntityType.COMMON)
-WOMBPLUS:AddCallback(ModCallbacks.MC_POST_EFFECT_UPDATE, WOMBPLUS.SeespotVisualUpdate, variant.SEESPOTVISUAL)
 
 function WOMBPLUS:EntityInit(entity)
-	if entity.Variant == variant.PARABRUTE or entity.Variant == variant.OVERBOIL or entity.Variant == variant.CLOTWORM or entity.Variant == variant.PUSY or entity.Variant == variant.SEESPOTVISUAL then
+	if entity.Variant == variant.PARABRUTE or entity.Variant == variant.OVERBOIL or entity.Variant == variant.CLOTWORM or entity.Variant == variant.PUSY or entity.Variant == variant.SEESPOTVISUAL or entity.Variant == variant.NERVEENDINGVISUAL then
 		entity:AddEntityFlags(EntityFlag.FLAG_NO_KNOCKBACK | EntityFlag.FLAG_NO_PHYSICS_KNOCKBACK)
+	end
+
+	if entity.Variant == variant.SEESPOTVISUAL or entity.Variant == variant.NERVEENDINGVISUAL then
+		entity:AddEntityFlags(EntityFlag.FLAG_RENDER_FLOOR | EntityFlag.FLAG_NO_REMOVE_ON_TEX_RENDER)
 	end
 end
 

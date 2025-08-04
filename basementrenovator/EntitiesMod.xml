@@ -11,5 +11,6 @@
     <entity Image="ScarredWomb+/Clotworm.png" ID="612" Variant="88" Name="Clotworm" BaseHP="25"/>
     <!-- Grid -->
     <entity ID="612" Image="ScarredWomb+/Seespot.png" Name="Seespot" Subtype="0" Variant="87" NoBlockDoors="1" />
+    <entity ID="612" Image="ScarredWomb+/NerveEnding.png" Name="Exposed Nerves" Subtype="0" Variant="89" NoBlockDoors="1" />
   </group>
 </data>

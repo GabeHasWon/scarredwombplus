@@ -1,4 +1,5 @@
-- Made seespots have 3 additional sprite variants, more animation
-- Made Cysts death tears be more consistently on player height
-- Added 30 more rooms
-- Fixed one room having no enemies despite needing them
+- Added 50 more rooms
+- Added Exposed Nerves grid entity
+- Added 'shooting' animation to Seespots
+- Fixed 4th variant of Seespots not being used
+- Fixed some mistakes in some rooms

@@ -55,4 +55,10 @@
 
   <!-- Seespot visual effect -->
   <entity id="1000" variant="1789" anm2path="grid/seespot.anm2" name="Seespot Visual" baseHP="1" boss="0" champion="0" collisionDamage="0" collisionMass="100" collisionRadius="0" friction="1" numGridCollisionPoints="0" gridCollision="walls" shadowSize="0" stageHP="0" shutdoors="false" portrait="61" bestiary="false" bestiaryTransform="0,0,1" bestiaryAnim="Idle" />
+
+  <!-- Nerve Ending -->
+  <entity id="612" variant="89" anm2path="grid/nerveendings.anm2" name="Exposed Nerves" baseHP="1" boss="0" champion="0" collisionDamage="0" collisionMass="100" collisionRadius="0" friction="1" numGridCollisionPoints="4" gridCollision="walls" shadowSize="0" stageHP="0" shutdoors="false" portrait="61" bestiary="false" bestiaryTransform="0,0,1" bestiaryAnim="Idle" />
+
+  <!-- Nerve Ending visual effect -->
+  <entity id="1000" variant="1790" anm2path="grid/nerveendings.anm2" name="Exposed Nerves Visual" baseHP="1" boss="0" champion="0" collisionDamage="0" collisionMass="100" collisionRadius="0" friction="1" numGridCollisionPoints="0" gridCollision="walls" shadowSize="0" stageHP="0" shutdoors="false" portrait="61" bestiary="false" bestiaryTransform="0,0,1" bestiaryAnim="Idle" />
 </entities>

@@ -31,11 +31,29 @@ function WOMBPLUS.SeespotAI(customGrid)
 
     if not data.Timer then 
         data.Timer = 0
-        data.SteppedOn = false
     end
 
     if not customGrid.PersistentData.Effect then
         customGrid.PersistentData.Effect = Isaac.Spawn(EffectID, variant.SEESPOTVISUAL, 0, customGrid.Position, Vector.Zero, nil)
+    end
+
+    local sprite = customGrid.PersistentData.Effect:GetSprite()
+    local effectData = customGrid.PersistentData.Effect:GetData()
+
+    if data.Timer > 2 then
+        local name = "Shoot" .. effectData.Frame
+
+        if not sprite:IsPlaying(name) then
+            sprite:Play(name, true)
+        end
+
+    else 
+        local name = "Idle" .. effectData.Frame
+
+        if not sprite:IsPlaying(name) then
+            sprite:Play(name, true)
+        end
+
     end
 
     data.Timer = data.Timer - 1
@@ -75,9 +93,12 @@ function WOMBPLUS:SeespotVisualUpdate(entity)
 
     if not data.Init then
         data.Init = true
+        data.Frame = math.random(1, 4)
         entity.DepthOffset = -1000
 
-        local name = "Idle" .. tostring(math.random(1, 3))
+        local name = "Idle" .. data.Frame
         entity:GetSprite():Play(name, true)
     end
 end
+
+WOMBPLUS:AddCallback(ModCallbacks.MC_POST_EFFECT_UPDATE, WOMBPLUS.SeespotVisualUpdate, variant.SEESPOTVISUAL)
