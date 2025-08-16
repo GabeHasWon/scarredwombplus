@@ -1,5 +1,5 @@
 <AnimatedActor>
-	<Info CreatedBy="GabeHasWon" CreatedOn="8/3/2025 10:04:10 PM" Version="156" Fps="30"/>
+	<Info CreatedBy="GabeHasWon" CreatedOn="8/3/2025 10:18:15 PM" Version="157" Fps="30"/>
 	<Content>
 		<Spritesheets>
 			<Spritesheet Path="custom\seespot.png" Id="0"/>

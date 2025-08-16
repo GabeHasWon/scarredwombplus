@@ -1,5 +1,23 @@
-- Added 50 more rooms
-- Added Exposed Nerves grid entity
-- Added 'shooting' animation to Seespots
-- Fixed 4th variant of Seespots not being used
-- Fixed some mistakes in some rooms
+- Added 10 more rooms
+- Fixed Overboil champion sprite using 127 alpha instead of 128, making it unclear
+- Made Scarred Baby champion not color the bones/teeth
+- Made Pustules not count towards room completion
+- Adjusted a ton of rooms to:
+	1. Have less Seespots/Exposed Nerves directly on the entry tile
+	2. Reduced the amount of Parabrutes in small rooms
+	3. Replaced rooms with Pustules for room completion with various enemies, usually Boils
+	4. Fixed some rooms having unfair laser eye turret placement, causing instant damage
+
+-- TODO --
+- Pusy could have sounds to clarify its offscreen presence.
+- Scarred womb pustule can become a champion which shouldn't be the case due to it being a trap.
+- Clotworm being a dark red champion leads to getting softlocked because it's still invincible.
+- When designing rooms for clotworm, you might want to keep player's speed in mind. Player might take damage when they're forced to be in clotworm's range if they're slow enough.
+- Parabrute has these problems going on with it where either it's too hard or it has problematic rooms, not to mention some 1x1 rooms have more prarabrutes than player can handle. 
+	Other two problems are that the enemy being able to become a champion can lead to taking guaranteed damage and it's possible for the enemy to pop up on top of player.
+- More of a suggestion for improvement than issue report. Make clotworm not get targeted by familiars when it's invincible (right at the point where it takes damage that would get its hp to 0 or less) to make it consistent with codworm.After the petrification status effect wears off, scarred womb cyst won't move until it gets pushed.Frozen pusy, overboil and scarred womb pustule can't get pushed, but they still get in pushed state.Scarred baby's split projectiles don't account for this enemy being charmed or friendly.If pusy has slow status effect, it will spawn more than one scarred womb pustule.Make scarred womb pustule immune to status effects.
+- These other enemies don't play well with dark red champion type as well after regenerating:
+	Scarred baby: Becomes invisible. Once that happens, it won't do anything else and if it collapses into pile of goo while attacking or teleporting, it becomes immobile.
+	Scarred womb cyst: Becomes invisible. It only shoots projectiles when it truly dies. If killed soon enough after it collapses into pile of goo, the projectiles will be smaller.
+	Parabrute: Becomes invisible, immobile and non-functional if it collapses into pile of goo while coming out of ground or doing the creep attack. If it collapses while in "appear" state, it becomes invisible if timed right, but fixes itself.
+	Pusy: Becomes invisible, immobile and non-functional. However, if it collapses into pile of goo while trying to spawn a scarred womb pustule, it will also constantly spawn scarred womb pustules after regenerating until it collapses again.
