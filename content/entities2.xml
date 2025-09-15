@@ -23,7 +23,7 @@
   </entity>
 
   <!-- Pustule -->
-  <entity id="612" variant="84" anm2path="monsters/pustule.anm2" reroll="true" name="Pustule" baseHP="12" stageHP="0" boss="0" champion="1" collisionDamage="0" collisionMass="100" collisionRadius="11" friction="0" numGridCollisionPoints="12" shadowSize="0" portrait="5" shutdoors="false">
+  <entity id="612" variant="84" anm2path="monsters/pustule.anm2" reroll="true" name="Pustule" baseHP="12" stageHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="100" collisionRadius="11" friction="0" numGridCollisionPoints="12" shadowSize="0" portrait="5" shutdoors="false">
     <gibs amount="7" blood="2" bone="0" eye="0" gut="0" large="0" rock="0" />
     <bestiary anim="Idle" transform="0,0,1"/>
   </entity>
@@ -43,7 +43,7 @@
   </entity>
 
   <!-- Clot Worm -->
-  <entity id="612" variant="88" anm2path="monsters/clotworm.anm2" reroll="true" name="Clot Worm" baseHP="25" stageHP="0" boss="0" champion="1" collisionDamage="1" collisionMass="100" collisionRadius="12" friction="0" numGridCollisionPoints="12" shadowSize="0" portrait="2">
+  <entity id="612" variant="88" anm2path="monsters/clotworm.anm2" reroll="true" name="Clot Worm" baseHP="25" stageHP="0" boss="0" champion="0" collisionDamage="1" collisionMass="100" collisionRadius="12" friction="0" numGridCollisionPoints="12" shadowSize="0" portrait="2">
     <gibs amount="16" blood="6" bone="0" eye="0" gut="4" large="4" rock="0" />
     <devolve id ="221.0.0" weight="1" />
     <bestiary anim="Idle" transform="0,0,1"/>

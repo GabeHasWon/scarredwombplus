@@ -1,17 +1,11 @@
-- Added 10 more rooms
-- Fixed Overboil champion sprite using 127 alpha instead of 128, making it unclear
-- Made Scarred Baby champion not color the bones/teeth
-- Made Pustules not count towards room completion
-- Adjusted a ton of rooms to:
-	1. Have less Seespots/Exposed Nerves directly on the entry tile
-	2. Reduced the amount of Parabrutes in small rooms
-	3. Replaced rooms with Pustules for room completion with various enemies, usually Boils
-	4. Fixed some rooms having unfair laser eye turret placement, causing instant damage
+- Disabled Clotworms from being Champions, fixing some niche issues with some champions
+- Stopped Pustules from being champions since they're no longer normal enemies
+- Added "No Hud" seed compatibility for the room names for consistency
+- Fixed some room names not having a space after "ScarredWomb+ -"
+- Added 40 more rooms
 
 -- TODO --
 - Pusy could have sounds to clarify its offscreen presence.
-- Scarred womb pustule can become a champion which shouldn't be the case due to it being a trap.
-- Clotworm being a dark red champion leads to getting softlocked because it's still invincible.
 - When designing rooms for clotworm, you might want to keep player's speed in mind. Player might take damage when they're forced to be in clotworm's range if they're slow enough.
 - Parabrute has these problems going on with it where either it's too hard or it has problematic rooms, not to mention some 1x1 rooms have more prarabrutes than player can handle. 
 	Other two problems are that the enemy being able to become a champion can lead to taking guaranteed damage and it's possible for the enemy to pop up on top of player.
