@@ -1,4 +1,1 @@
-- Stopped the room name HUD from appearing when Fiend Folio is on, which has its own (nicer) UI
-- Reduced the size of the room name HUD 50%
-- Holding Tab (Map button) increases the room name HUD back to 100%
-- Added 50 more rooms
+- Added 30 more rooms
