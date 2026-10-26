@@ -75,7 +75,7 @@ function WOMBPLUS.SeespotAI(customGrid)
 		p.Height = 0
 		p.FallingSpeed = -math.random(1200, 3000) * 0.01
 		p.FallingAccel = 1.5
-		p.Scale = 1
+		p.Scale = 0.2
     end
 end
 

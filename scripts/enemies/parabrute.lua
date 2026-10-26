@@ -13,6 +13,10 @@ function WOMBPLUS:ParabruteUpdate(entity)
 
 	data.StateFrame = data.StateFrame + 1
 
+	if REPENTOGON then
+		entity:UpdateDirtColor(false)
+	end
+
 	if data.State == 0 then
 
 		data.State = 1
@@ -30,7 +34,7 @@ function WOMBPLUS:ParabruteUpdate(entity)
 				data.GridCountdown = data.GridCountdown - 1
 			end
 		else
-			entity.Velocity = (target.Position - entity.Position):Normalized():Resized(4)
+			entity.Velocity = (target.Position - entity.Position):Normalized():Resized(3)
 		end
 
 		if (math.random(3) == 2) then
@@ -88,7 +92,7 @@ function WOMBPLUS:ParabruteUpdate(entity)
 	elseif data.State == 4 then
 		if entity:GetSprite():IsEventTriggered("Action") then
 			for i = 0, 18 do 
-				WOMBPLUS:Creep(EffectVariant.CREEP_RED, 0, entity.Position + Vector(math.random(-60, 60), math.random(-60, 60)), entity) 
+				WOMBPLUS:Creep(EffectVariant.CREEP_RED, 0, entity.Position + Vector(math.random(-50, 50), math.random(-50, 50)), entity) 
 			end
 		elseif entity:GetSprite():IsFinished("Splat") then
 			data.State = 0

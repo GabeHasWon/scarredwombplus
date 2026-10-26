@@ -58,6 +58,7 @@ function WOMBPLUS:ClotwormUpdate(entity)
 			if sprite:IsFinished("Hide") then
 				data.timer = 1
 				sprite:Play("HideShoot", true)
+				entity:AddEntityFlags(EntityFlag.FLAG_NO_TARGET)
 			end
 
 		else if data.timer == 1 then

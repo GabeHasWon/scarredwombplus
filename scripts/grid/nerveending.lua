@@ -98,7 +98,7 @@ function WOMBPLUS.NerveEndingAI(customGrid)
 		p.Height = 0
 		p.FallingSpeed = -math.random(1200, 3000) * 0.01
 		p.FallingAccel = 1.5
-		p.Scale = 0.7
+		p.Scale = 0.2
     end
 end
 
@@ -106,6 +106,9 @@ function WOMBPLUS.NerveEndingSpawn(customGrid)
     local persistData = customGrid.PersistentData
     local data = customGrid.Data
     persistData.Effect = Isaac.Spawn(EffectID, variant.NERVEENDINGVISUAL, 0, customGrid.Position, Vector.Zero, nil)
+    persistData.FloorEffect = Isaac.Spawn(EffectID, variant.NERVEENDINGVISUAL, 0, customGrid.Position, Vector.Zero, nil)
+    persistData.FloorEffect:GetSprite():Play("Bottom", true)
+    persistData.FloorEffect:AddEntityFlags(EntityFlag.FLAG_RENDER_FLOOR)
 end
 
 StageAPI.AddCallback("WombPlus", "POST_CUSTOM_GRID_UPDATE", 1, WOMBPLUS.NerveEndingAI, WOMBPLUS.Grid.NerveEndingGrid.Name)

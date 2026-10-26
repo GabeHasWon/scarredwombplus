@@ -59,6 +59,10 @@ function WOMBPLUS:Creep(variant, subtype, pos, parent) --Simple creep spawn func
     return npc
 end
 
+function WOMBPLUS:Frozen(entity)
+	return entity:HasEntityFlags(EntityFlag.FLAG_FREEZE) or entity:HasEntityFlags(EntityFlag.FLAG_MIDAS_FREEZE)
+end
+
 function WOMBPLUS:ProjectileUpdate(pro)
 	if pro.SpawnerType == EntityType.COMMON and pro.SpawnerVariant == variant.SCARRED_BABY then
 		if pro:IsDead() then

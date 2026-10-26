@@ -1,1 +1,4 @@
-- Added 30 more rooms
+- Edited a lot of rooms for consistency, fairness and difficulty
+- Lowered Parabrute's speed
+- Made Clotworm not targetable when hiding (by homing or familiars)
+- Fixed issue where Pusys may spam spawning Pustules if frozen at just the wrong time

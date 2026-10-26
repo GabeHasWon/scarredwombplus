@@ -42,7 +42,7 @@ function WOMBPLUS:PusyUpdate(entity)
 			focusing = false
 		end
 
-		if focusing and data.StateFrame % 40 == 0 then
+		if focusing and data.StateFrame % 40 == 0 and not WOMBPLUS:Frozen(entity) then
 			local pos = target.Position + Vector(math.random(-4, 4), math.random(-4, 4))
 			-- pos = Isaac:GetFreeNearPosition(startPos, 30)
 			local pustule = Isaac.Spawn(EntityType.COMMON, variant.PUSTULE, 0, pos, Vector.Zero, entity) -- Spawn pustule near player
@@ -74,6 +74,7 @@ function WOMBPLUS:PustuleUpdate(entity)
 
 	if data.timer == nil then 
 		data.timer = 0 
+		entity:AddEntityFlags(EntityFlag.FLAG_NO_STATUS_EFFECTS)
 	end
 
 	data.timer = data.timer + 1

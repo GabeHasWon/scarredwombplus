@@ -3,7 +3,7 @@
     <name>Scarred Womb+</name>
     <directory>scarredwombplus</directory>
     <id>3276206755</id>
-    <description>Adds [9] new enemies to the Scarred Womb, along with 910 new rooms for them to occupy.
+    <description>Adds [9] new enemies to the Scarred Womb, with 1000 new rooms for them to occupy. Plus, 10 rooms for the Chest using the new content as well!
 
 The enemies are as follows:
 Scarred Baby, a Baby variant that spits bursting, lobbing tears
@@ -18,8 +18,11 @@ Exposed Nerves, a grid entity that behaves like Seespots, but only for flying pl
 
 Additionally, this mod also adds in a few resprites for vanilla enemies, and uses those in new rooms as well.
 
-Please report bugs to me. Enjoy!</description>
-    <version>1.28</version>
+Please report bugs to me. Enjoy!
+
+NOTE: This mod requires StageAPI to function! Enable it or this mod won't work properly.
+    </description>
+    <version>1.30</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
     <tag id="Rooms"/>
