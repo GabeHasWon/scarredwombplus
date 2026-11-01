@@ -3,7 +3,7 @@
     <name>Scarred Womb+</name>
     <directory>scarredwombplus</directory>
     <id>3276206755</id>
-    <description>Adds [9] new enemies to the Scarred Womb, with 1000 new rooms for them to occupy. Plus, 10 rooms for the Chest using the new content as well!
+    <description>Adds [9] new enemies to the Scarred Womb, with 1010 new rooms for them to occupy. Plus, 10 rooms for the Chest using the new content as well!
 
 The enemies are as follows:
 Scarred Baby, a Baby variant that spits bursting, lobbing tears
@@ -21,8 +21,10 @@ Additionally, this mod also adds in a few resprites for vanilla enemies, and use
 Please report bugs to me. Enjoy!
 
 NOTE: This mod requires StageAPI to function! Enable it or this mod won't work properly.
+
+Also, here's the Github if you want to see the mod's code on web: https://github.com/GabeHasWon/scarredwombplus
     </description>
-    <version>1.30</version>
+    <version>1.31</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
     <tag id="Rooms"/>
